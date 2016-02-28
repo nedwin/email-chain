@@ -1,0 +1,71 @@
+<head>
+  <title>email-chain</title>
+</head>
+
+<body>
+
+
+  
+
+</body>
+
+<template name="home">
+	<h2>Welcome to Email Chain.</h2>
+	<p>Email Chain is a collaborative newsletter to keep track of what your group is doing every month. It's a minimalist email-based private social network.</p>
+	
+	{{> posts}}
+	<p>/buzzwords</p>
+
+</template>	
+
+
+<template name="main">
+	<h1>Email Chain</h1>
+		{{> navigation}}
+	    {{> yield}}
+	<hr />
+	<p>Built by <a href="https://twitter.com/nedwin">@nedwin</a>. Copyright 2016.</p>
+</template>	
+
+<template name="navigation">
+			<ul>
+				<li><a href="{{pathFor route='home'}}">Home</a></li>
+				<li><a href="{{pathFor route='signup'}}">Sign Up</a></li>
+				<li><a href="{{pathFor route='login'}}">login</a></li>
+	
+			</ul>
+</template>	
+
+<template name="update">
+	<h2>What did you do this month?</h2>
+	<p>Tell us what you got up to this month, what you're excited about and what you might need help with.</p>
+		{{> quickForm collection="Posts" id="insertPostForm" type="insert"}}
+</template>	
+
+<template name="thanks">
+	<h2>Thanks!</h2>
+	<p>Thanks for submitting your update for this month. Keep an eye on your inbox for the update from all of your friends in the next 24 hours.</p>
+</template>	
+
+
+<template name="posts">
+	<h2>Posts submitted by users</h2>
+	{{#each post}}
+		<li>{{content}}</li>
+	{{/each}}
+</template>	
+
+<template name="submissions">
+	<p>test</p>
+	<ul>
+
+	</ul>
+</template>	
+
+<template name="signup">
+    <h2>Sign Up</h2>
+</template>
+
+<template name="login">
+    <h2>Log In</h2>
+</template>
